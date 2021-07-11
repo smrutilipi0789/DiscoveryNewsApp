@@ -12,7 +12,7 @@ public class FcmMessageService extends FirebaseMessagingService {
         JSONObject object = new JSONObject(params);
         Log.e("JSON_OBJECT", object.toString());
 
-        String NOTIFICATION_CHANNEL_ID = "Nilesh_channel";
+        String NOTIFICATION_CHANNEL_ID = "News_channel";
 
         long pattern[] = {0, 1000, 500, 1000};
 
@@ -23,7 +23,7 @@ public class FcmMessageService extends FirebaseMessagingService {
             NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "Your Notifications",
                     NotificationManager.IMPORTANCE_HIGH);
 
-            notificationChannel.setDescription("");
+            notificationChannel.setDescription("New News arrived");
             notificationChannel.enableLights(true);
             notificationChannel.setLightColor(Color.RED);
             notificationChannel.setVibrationPattern(pattern);
